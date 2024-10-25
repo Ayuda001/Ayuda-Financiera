@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Préstamo en Línea</title>
+    <link rel="stylesheet" href="formulaire.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Solicitud de Préstamo en Línea</h1>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="status-tracker">
+            <div class="status-step active">
+                <div>Paso 1</div>
+                <div>Información</div>
+            </div>
+            <div class="status-step">
+                <div>Paso 2</div>
+                <div>Documentos</div>
+            </div>
+            <div class="status-step">
+                <div>Paso 3</div>
+                <div>Verificación</div>
+            </div>
+            <div class="status-step">
+                <div>Paso 4</div>
+                <div>Firma</div>
+            </div>
+        </div>
+
+        <form id="loanForm" action="https://formspree.io/f/mdkokwzp" method="POST">
+
+            <!-- Informations personnelles -->
+            <div class="form-section">
+                <h2>Información personal</h2>
+                <div class="form-group">
+                    <label for="nom">Nombre completo</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Teléfono</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+            </div>
+
+            <!-- Informations sur le prêt -->
+            <div class="form-section">
+                <h2>Detalles del préstamo</h2>
+                <div class="form-group">
+                    <label for="montant">Monto deseado ($)</label>
+                    <input type="number" id="montant" name="montant" required>
+                </div>
+                <div class="form-group">
+                    <label for="duree">Duración del préstamo</label>
+                    <select id="duree" name="duree" required>
+                        <option value="">Seleccione una duración</option>
+                        <option value="12">12 meses</option>
+                        <option value="24">24 meses</option>
+                        <option value="36">36 meses</option>
+                        <option value="48">48 meses</option>
+                        <option value="60">60 meses</option>
+                        <option value="84">84 meses</option>
+                        <option value="120">120 meses</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Upload de documents -->
+            <div class="form-section">
+                <h2>Documentos requeridos</h2>
+                <div class="form-group">
+                    <label>Documento de identidad</label>
+                    <div class="upload-zone" onclick="document.getElementById('id-upload').click()">
+                        <p>Haga clic o arrastre su documento aquí</p>
+                        <input type="file" id="id-upload" name="piece-identite" hidden accept=".pdf,.jpg,.png">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Comprobante de domicilio</label>
+                    <div class="upload-zone" onclick="document.getElementById('address-upload').click()">
+                        <p>Haga clic o arrastre su documento aquí</p>
+                        <input type="file" id="address-upload" name="justificatif-domicile" hidden accept=".pdf,.jpg,.png">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Recibos de nómina (últimos 3 meses)</label>
+                    <div class="upload-zone" onclick="document.getElementById('salary-upload').click()">
+                        <p>Haga clic o arrastre sus documentos aquí</p>
+                        <input type="file" id="salary-upload" name="bulletins-salaire" hidden accept=".pdf,.jpg,.png" multiple>
+                    </div>
+                </div>
+            </div>
+
+            <div class="important">
+                <p>Importante: Lea los <a href="conditions générales.html">Términos y condiciones</a> del préstamo antes de
+                    enviar su solicitud.</p>
+            </div>
+            <button type="submit" class="btn">Enviar solicitud</button>
+        </form>
+    </div>
+    <script src="loan-simulator.js"></script>
+</body>
+
+</html>

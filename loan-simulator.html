@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Préstamos</title>
+    <link rel="stylesheet" href="loan-simulator.css">
+</head>
+
+<body>
+    <section class="ls-simulator-section">
+        <div class="ls-container">
+            <h2 class="ls-title">Simule su préstamo</h2>
+            <p class="ls-subtitle">Descubra nuestras ofertas de préstamos con tasas ventajosas</p>
+
+            <div class="ls-cards-container">
+                <!-- Tarjetas de diferentes tipos de préstamos -->
+                <div class="ls-loan-card">
+                    <h3>Préstamo Personal</h3>
+                    <div class="ls-rate">2,98% <span>TAE fijo</span></div>
+                    <p>Ideal para sus proyectos personales</p>
+                </div>
+
+                <div class="ls-loan-card">
+                    <h3>Préstamo Profesional</h3>
+                    <div class="ls-rate">2,99% <span>TAE fijo</span></div>
+                    <p>Para desarrollar su actividad</p>
+                </div>
+
+                <div class="ls-loan-card">
+                    <h3>Préstamo Hipotecario</h3>
+                    <div class="ls-rate">3,00% <span>TAE fijo</span></div>
+                    <p>Realice su proyecto inmobiliario</p>
+                </div>
+            </div>
+
+            <div class="ls-simulator-card">
+                <div class="ls-form-group">
+                    <label for="ls-loan-type">Tipo de préstamo</label>
+                    <select id="ls-loan-type" required>
+                        <option value="">Seleccione el tipo de préstamo</option>
+                        <option value="personal">Préstamo Personal (TAE 2,98%)</option>
+                        <option value="professional">Préstamo Profesional (TAE 2,99%)</option>
+                        <option value="mortgage">Préstamo Hipotecario (TAE 3,00%)</option>
+                    </select>
+                </div>
+
+                <div class="ls-form-group">
+                    <label for="ls-amount">Monto del préstamo ($)</label>
+                    <input type="number" id="ls-amount" placeholder="Ejemplo: 50000" required>
+                </div>
+
+                <div class="ls-form-group">
+                    <label for="ls-duration">Duración (años)</label>
+                    <input type="number" id="ls-duration" placeholder="Ejemplo: 5" required>
+                </div>
+
+                <button id="ls-calculate-btn" class="ls-calculate-btn">Calcular mis mensualidades</button>
+
+                <div id="ls-results" class="ls-results">
+                    <h3>Resultados de su simulación</h3>
+                    <div class="ls-results-grid">
+                        <div class="ls-result-item">
+                            <span class="ls-result-label">Mensualidad</span>
+                            <span id="ls-monthly-payment" class="ls-result-value">0</span>
+                            <span class="ls-result-unit">$ / mes</span>
+                        </div>
+                        <div class="ls-result-item">
+                            <span class="ls-result-label">Costo total del crédito</span>
+                            <span id="ls-total-amount" class="ls-result-value">0</span>
+                            <span class="ls-result-unit">$</span>
+                        </div>
+                        <div class="ls-result-item">
+                            <span class="ls-result-label">Total de intereses</span>
+                            <span id="ls-total-interest" class="ls-result-value">0</span>
+                            <span class="ls-result-unit">$</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="button-container">
+            <a href="formulaire.html" class="cta-button">Solicitar el préstamo</a>
+        </div>
+
+        <a href="index.html" class="ls-back-btn">Volver al inicio</a>
+
+        </div>
+
+    </section>
+
+    <script src="loan-simulator.js"></script>
+</body>
+
+</html>

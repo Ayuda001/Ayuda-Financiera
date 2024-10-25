@@ -1,0 +1,742 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f8fafc;
+  }
+  
+  /* Nouvelle barre de navigation améliorée */
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 0.8rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-icon {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon i {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin-right: 2rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #2563eb;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-secondary {
+    color: #2563eb;
+    background: #eff6ff;
+  }
+  
+  .btn-primary {
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  }
+  
+  .btn-secondary:hover {
+    background: #dbeafe;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+  }
+  
+  /* Hero section améliorée */
+  .hero {
+    margin-top: 80px;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/api/placeholder/1920/1080') center/cover;
+    opacity: 0.1;
+  }
+  
+  .hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  
+  .hero-badge i {
+    color: #3b82f6;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+  }
+  
+  .hero-stats {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+  
+  /* Cards de prêts améliorées */
+  .section-loans {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+  }
+  
+  .loan-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .loan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+  }
+  
+  .loan-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .loan-type {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+  }
+  
+  .loan-rate {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .rate-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2563eb;
+  }
+  
+  .rate-period {
+    color: #64748b;
+  }
+  
+  .loan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  .loan-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #475569;
+  }
+  
+  .loan-feature i {
+    color: #2563eb;
+  }
+  
+  .loan-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loan-badge {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: #2563eb;
+    color: white;
+    padding: 0.3rem 3rem;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .process-section {
+    background: #f8fafc;
+    padding: 6rem 2rem;
+  }
+  
+  .process-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    margin-top: 4rem;
+  }
+  
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: #e2e8f0;
+    z-index: 0;
+  }
+  
+  .process-step {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .testimonials {
+    padding: 6rem 2rem;
+  }
+  .ls-simulate-btn {
+    text-align: center;
+    display: flow-root;
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .ls-simulate-btn:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+  }
+  .ls-simulator-section {
+    padding: 4rem 1rem;
+    background-color: #f8fafc;
+  }
+  
+/* Style pour le conteneur du bouton */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Ajoutez de l'espace au-dessus et en-dessous du bouton si nécessaire */
+}
+
+/* Style du bouton (ajoutez ces propriétés à votre style .cta-button existant) */
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Styles hover et active restent les mêmes */
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+  .ls-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ls-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  
+  .ls-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+  }
+  
+  .ls-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .ls-loan-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .ls-loan-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .ls-loan-card h3 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ls-rate {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+  
+  .ls-rate span {
+    display: block;
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: normal;
+  }
+  
+  .ls-simulator-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .ls-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ls-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #1e293b;
+  }
+  
+  .ls-form-group input,
+  .ls-form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .ls-form-group input:focus,
+  .ls-form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  .ls-calculate-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ls-calculate-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .ls-results {
+    display: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .ls-results h3 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ls-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .ls-result-item {
+    text-align: center;
+  }
+  
+  .ls-result-label {
+    display: block;
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ls-result-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ls-result-unit {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 768px) {
+    .ls-simulator-card {
+        padding: 1.5rem;
+    }
+  
+    .ls-title {
+        font-size: 2rem;
+    }
+  
+    .ls-results-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e2e8f0;
+  }
+  
+  .testimonial-rating {
+    color: #f59e0b;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-section {
+    background: #f8fafc;
+    padding: 6rem 2rem;
+  }
+  
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .contact-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    color: #1e293b;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-input:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  
+  .submit-btn {
+    background: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+  }
